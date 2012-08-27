@@ -1,6 +1,15 @@
 # Puppet-Homebrew
 
-A Puppet Module to install Homebrew and manage Homebrew packages on Mac OS X.
+A Homebrew package provider for Mac OS X (brewery included).
+
+## Installation
+
+The modules second home is at [Puppet
+Forge](https://forge.puppetlabs.com/bjoernalbers/homebrew), so this will do the trick:
+
+```bash
+puppet module install bjoernalbers-homebrew
+```
 
 ## Usage
 
