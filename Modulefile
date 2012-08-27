@@ -1,11 +1,7 @@
-name    'kelseyhightower-homebrew'
+name    'bjoernalbers-homebrew'
 version '0.0.1'
-source 'https://github.com/kelseyhightower/puppet-homebrew'
-author 'kelseyhightower'
-license 'APACHE2'
-summary 'Homebrew package provider'
-description 'Homebrew package provider'
-project_page 'https://github.com/kelseyhightower/puppet-homebrew'
-
-## Add dependencies, if any:
-# dependency 'username/name', '>= 1.2.0'
+summary 'Homebrew package provider (batteries included)'
+description 'Install Homebrew and manage Homebrew packages on Mac OS X.'
+project_page 'https://github.com/bjoernalbers/puppet-homebrew'
+license 'Apache License, Version 2.0'
+author 'bjoernalbers'
