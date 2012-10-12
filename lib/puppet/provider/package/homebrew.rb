@@ -54,7 +54,9 @@ Puppet::Type.type(:package).provide(:brew, :parent => Puppet::Provider::Package)
     end
 
     begin
-      list = execute(brew_list_command).lines.map {|line| name_version_split(line) }
+      list = execute(brew_list_command, :custom_environment => { "HOME" => ENV["HOME"] }).
+        lines.
+        map {|line| name_version_split(line) }
     rescue Puppet::ExecutionFailure => detail
       raise Puppet::Error, "Could not list packages: #{detail}"
     end
