@@ -46,3 +46,13 @@ class { 'homebrew':
 (Please read the fine manual ["Homebrew Installation"](https://github.com/mxcl/homebrew/wiki/Installation) for further epiphany).
 
 Note that you have to download and provide the command line tools yourself, which requires an Apple ID! Sorry, dude.
+
+## Acknowledgments
+
+Thanks to the following contributors for making Open Source fun:
+
+* [trobrock (Trae Robrock)](https://github.com/trobrock): Provide fix for Puppet 3
+
+## License
+
+Copyright (c) 2012 Björn Albers (Apache License, Version 2.0)
