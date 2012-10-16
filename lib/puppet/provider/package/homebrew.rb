@@ -1,7 +1,7 @@
 require 'puppet/provider/package'
 
 Puppet::Type.type(:package).provide(:brew, :parent => Puppet::Provider::Package) do
-  CUSTOM_ENVIRONMENT = { "HOME" => ENV["HOME"] }
+  CUSTOM_ENVIRONMENT = { "HOME" => ENV["HOME"], "USER" => ENV["USER"] }
   desc "Package management using HomeBrew on OS X"
 
   confine  :operatingsystem => :darwin
