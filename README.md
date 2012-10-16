@@ -51,7 +51,7 @@ Note that you have to download and provide the command line tools yourself, whic
 
 Thanks to the following contributors for making Open Source fun:
 
-* [trobrock (Trae Robrock)](https://github.com/trobrock): Provide fix for Puppet 3
+* [trobrock (Trae Robrock)](https://github.com/trobrock): Provided ENV-related fixes for Puppet 3
 
 ## License
 
