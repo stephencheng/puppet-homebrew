@@ -9,11 +9,11 @@ Puppet::Type.type(:package).provide(:brew, :parent => Puppet::Provider::Package)
   has_feature :versionable
 
   if respond_to? :has_command
-    has_command :brew, "/usr/local/bin/brew" do
+    has_command :brew, "brew" do
       environment CUSTOM_ENVIRONMENT
     end
   else
-    commands :brew => "/usr/local/bin/brew"
+    commands :brew => "brew"
   end
 
   # Install packages, known as formulas, using brew.
