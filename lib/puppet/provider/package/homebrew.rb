@@ -2,6 +2,12 @@ require 'puppet/provider/package'
 
 Puppet::Type.type(:package).provide(:brew, :parent => Puppet::Provider::Package) do
   CUSTOM_ENVIRONMENT = { "HOME" => ENV["HOME"], "USER" => ENV["USER"] }
+
+  extra_env=`env`.each_line do |line|
+    kv=line.split("=")
+    CUSTOM_ENVIRONMENT[kv[0]]=kv[1]
+  end
+
   desc "Package management using HomeBrew on OS X"
 
   confine  :operatingsystem => :darwin
@@ -28,7 +34,9 @@ Puppet::Type.type(:package).provide(:brew, :parent => Puppet::Provider::Package)
       package_name += "-#{should}"
     end
 
-    output = brew(:install, package_name)
+    brew_install_command = [command(:brew), "install", package_name]
+
+    output = execute(brew_install_command, :custom_environment => CUSTOM_ENVIRONMENT)
 
     # Fail hard if there is no formula available.
     if output =~ /Error: No available formula/
